@@ -69,6 +69,7 @@ Console.WriteLine(
 ```
 
 #Signature: T value { get; set; }
+
 Set value of variable:
 ```sh
 myInt.value = 666;
@@ -80,6 +81,7 @@ myInt.value -= 10;
 ```
 
 #Signature: bool detected { get; }
+
 Check if a protected variable has been externally edited:
 ```sh
 if(myInt.detected) {
@@ -100,6 +102,7 @@ Default encryption methods:
 * UselessEncryption
 
 #Signature: Constructor(T value, AbstractEncryption encryptionInstance = null);
+
 Attach encryption method to encrypted field:
 ```sh
 EInt32 myInt = new EInt32(
@@ -109,6 +112,7 @@ EInt32 myInt = new EInt32(
 ```
 
 #Signature: Constructor(T value, AbstractEncryption encryptionInstance = null);
+
 Attach null encryption method to field:
 ```sh
 EInt32 myInt = new EInt32(
@@ -118,6 +122,7 @@ EInt32 myInt = new EInt32(
 ```
 
 #Signature: Constructor(T value, AbstractEncryption encryptionInstance = null, AbstractEncryption protectionEncryptionInstance = null);
+
 Attach encryption method to protected field:
 ```sh
 PInt32 myInt = new PInt32(
@@ -127,6 +132,7 @@ PInt32 myInt = new PInt32(
 ```
 
 #Signature: Constructor(T value, AbstractEncryption encryptionInstance = null, AbstractEncryption protectionEncryptionInstance = null);
+
 Attach protection encryption method to protected field:
 ```sh
 PInt32 myInt = new PInt32(
@@ -168,6 +174,7 @@ public bool onIllegalModification(ref bool patchValue) {
 ```
 
 #Signature: public void registerIllegalModificationCallback(Callbacks.illegalModificationCallback<T> callback);
+  
 Attach typed illegalModificationCallback to a protected field:
 ```sh
 PString query = new PString("SELECT * FROM users;");
@@ -175,6 +182,7 @@ query.registerIllegalModificationCallback( onQueryModification );
 ```
 
 #Signature: public void registerIllegalModificationCallback(Callbacks.basicIllegalModificationCallback callback);
+
 Attach basic illegalModificationCallback to a protected field:
 ```sh
 PString query = new PString("SELECT * FROM users;");
@@ -182,6 +190,7 @@ query.registerIllegalModificationCallback( onIllegalModification );
 ```
 
 #Signature: public void clearIllegalModificationCallbacks();
+
 Clear attached illegalModificationCallbacks of a protected field:
 ```sh
 query.clearIllegalModificationCallbacks();
@@ -199,18 +208,21 @@ Default Config:
 - defaultIllegalModificationCallback = null
 
 #Signature: Type defaultEncryption { get; set; }
+
 Define default encrypted field encryption method:
 ```sh
 Config.defaultEncryption = UselessEncryption;
 ```
 
 #Signature: Type defaultProtectionEncryption { get; set; }
+
 Define default protected field protection encryption method:
 ```sh
 Config.defaultProtectionEncryption = UselessEncryption;
 ```
 
 #Signature: Callbacks.basicIllegalModificationCallback defaultIllegalModificationCallback { get; set; }
+
 Define base IllegalModificationCallback for protection fields:
 ```sh
 Config.defaultIllegalModificationCallback = delegate(ref bool patchValue) {
