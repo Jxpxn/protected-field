@@ -303,15 +303,15 @@ public class MyCustomEncryption : AbstractEncryption {
 Abstract methods:
 - abstractEncrypt -> byte[] abstractEncrypt(byte[] buffer)
 
--> This method is called at each encryption request and must return the encrypted buffer of the value injected in the buffer parameter.
+    -> This method is called at each encryption request and must return the encrypted buffer of the value injected in the buffer parameter.
 
 - abstractDecrypt -> byte[] abstractDecrypt(byte[] buffer)
 
--> This method is called at each decryption request and must return the decrypted buffer of the encrypted value injected in the buffer parameter.
+    -> This method is called at each decryption request and must return the decrypted buffer of the encrypted value injected in the buffer parameter.
 
 - refreshKey -> void refreshKey()
 
--> This method is called before each encryption request, this method is optional and can be ignored.
+    -> This method is called before each encryption request, this method is optional and can be ignored.
 
 Schema of Get/Set:
 - Set(value):
@@ -375,11 +375,11 @@ public class EMyStruct : AbstractField<MyStruct> {
 Abstract methods:
 - getBytes -> byte[] getBytes(T value)
 
--> This method is called at each value set and must return the injected value converted in array of bytes.
+    -> This method is called at each value set and must return the injected value converted in array of bytes.
 
 - getValue -> T getValue(byte[] buffer)
 
--> This method is called at each value get and must return the injected buffer converted in T type;
+    -> This method is called at each value get and must return the injected buffer converted in T type;
 
 
 License
