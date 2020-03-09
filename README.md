@@ -16,7 +16,7 @@ You can also:
 
 ### Installation
 
-Import the library into your .NET Framework project.
+Import the [library](https://github.com/Jxpxn/protected-field/releases) into your .NET Framework project.
 
 And use the following namespaces :
 
