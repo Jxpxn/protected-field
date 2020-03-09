@@ -47,16 +47,19 @@ This library contains these default types :
 
 
 #Signature: Constructor(T value, AbstractEncryption encryptionInstance = null);
+
 Declare encrypted variable:
 ```sh
 EInt32 myInt = new EInt32(100);
 ```
 #Signature: Constructor(T value, AbstractEncryption encryptionInstance = null, AbstractEncryption protectionEncryptionInstance = null);
+
 Declare protected variable:
 ```sh
 PInt32 myInt = new PInt32(100);
 ```
 #Signature: T value { get; set; }
+
 Get value of variable:
 ```sh
 Console.WriteLine(
