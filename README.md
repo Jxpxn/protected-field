@@ -366,7 +366,7 @@ public class EMyStruct : AbstractField<MyStruct> {
             // Manually write (pointer + index) content to buffer[index]
             Marshal.WriteByte( pointer + i, buffer[i] );
         }
-        // Return the conversion of pointer to pointer + sizeOf(MyStruct) to MyStruct
+        // Return the conversion of [pointer to pointer + sizeOf(MyStruct)] to MyStruct
         return (MyStruct)Marshal.PtrToStruct( pointer, typeof(MyStruct) );
     }
 }
