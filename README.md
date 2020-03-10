@@ -248,7 +248,7 @@ public class MyCustomEncryption : AbstractEncryption {
     }
 
     /*
-     * Add Byte with Byte
+     * Add Byte to Byte
      * Example: 10 + 10 = 20, 250 + 5 = 255, 250 + 6 = 1
     */
     private static byte addByte(byte x, byte y) {
@@ -257,7 +257,7 @@ public class MyCustomEncryption : AbstractEncryption {
     }
     
     /*
-     * Substract Byte with Byte
+     * Substract Byte to Byte
      * Example: 30 - 10 = 20, 255 - 5 = 250, 10 - 11 = 254
     */
     private static byte subByte(byte x, byte y) {
