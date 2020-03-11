@@ -54,6 +54,8 @@
     <Compile Include="Fields\Encrypted\EInt16.cs" />
     <Compile Include="Fields\Encrypted\EInt32.cs" />
     <Compile Include="Fields\Encrypted\EInt64.cs" />
+    <Compile Include="Fields\Encrypted\EStruct.cs" />
+    <Compile Include="Fields\Encrypted\ESByte.cs" />
     <Compile Include="Fields\Encrypted\EString.cs" />
     <Compile Include="Fields\Encrypted\EUInt16.cs" />
     <Compile Include="Fields\Encrypted\EUInt64.cs" />
@@ -64,7 +66,9 @@
     <Compile Include="Fields\Protected\PInt32.cs" />
     <Compile Include="Fields\Protected\PByte.cs" />
     <Compile Include="Fields\Protected\PInt64.cs" />
+    <Compile Include="Fields\Protected\PSByte.cs" />
     <Compile Include="Fields\Protected\PString.cs" />
+    <Compile Include="Fields\Protected\PStruct.cs" />
     <Compile Include="Fields\Protected\PUInt16.cs" />
     <Compile Include="Fields\Protected\PUInt32.cs" />
     <Compile Include="Fields\Protected\PUInt64.cs" />

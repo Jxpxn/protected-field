@@ -64,6 +64,11 @@ namespace FieldProtection.Abstract
                 AbstractEncryption.get(Config.defaultProtectionEncryption)
             ;
 
+            if(encryptionInstance == null)
+            {
+                this.encryptionInstance = AbstractEncryption.get(Config.defaultProtectionValueEncryption);
+            }
+
             this.registerSetCallback( this.onFieldSet );
             this.registerGetCallback( this.onFieldGet );
 
@@ -116,7 +121,7 @@ namespace FieldProtection.Abstract
         public void registerIllegalModificationCallback(Callbacks.basicIllegalModificationCallback callback)
         {
             this.registerIllegalModificationCallback(
-                delegate (ref T value, ref T rightValue, ref bool patchValue)
+                delegate (AbstractProtectedField<T> target, ref T value, ref T rightValue, ref bool patchValue)
                 {
                     return callback(ref patchValue);
                 }
@@ -131,7 +136,7 @@ namespace FieldProtection.Abstract
             {
                 foreach (Callbacks.illegalModificationCallback<T> callback in this.illegalModificationCallbacks.ToList())
                 {
-                    if (!callback(ref value, ref rightValue, ref patchValue)) { break; }
+                    if (!callback(this, ref value, ref rightValue, ref patchValue)) { break; }
                 }
             }
         }

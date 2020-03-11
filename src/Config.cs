@@ -16,9 +16,12 @@ namespace FieldProtection
             defaultIllegalModificationCallback;
 
         #region defaultEncryptionsType
-        private static Type nullEncryption;
+        private static Type _nullEncryption;
         private static Type _defaultEncryption;
         private static Type _defaultProtectionEncryption;
+        private static Type _defaultProtectionValueEncryption;
+
+        public static Type nullEncryption { get { return _nullEncryption; } }
 
         public static Type defaultEncryption
         {
@@ -53,14 +56,33 @@ namespace FieldProtection
                 }
             }
         }
+
+
+        public static Type defaultProtectionValueEncryption
+        {
+            get
+            {
+                return _defaultProtectionValueEncryption;
+            }
+            set
+            {
+                if (value == null) { value = nullEncryption; }
+
+                if (AbstractEncryption.isEncryptionType(value))
+                {
+                    _defaultProtectionValueEncryption = value;
+                }
+            }
+        }
         #endregion
 
         static Config()
         {
             defaultIllegalModificationCallback = null;
-            nullEncryption = typeof( UselessEncryption );
+            _nullEncryption = typeof( UselessEncryption );
             defaultEncryption = typeof( XOREncryption );
             defaultProtectionEncryption = typeof( XOREncryption );
+            defaultProtectionValueEncryption = typeof(XOREncryption);
         }
     }
 }

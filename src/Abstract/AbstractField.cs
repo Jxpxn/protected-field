@@ -14,9 +14,17 @@ namespace FieldProtection.Abstract
         private byte[] buffer;
         private AbstractEncryption _encryptionInstance;
 
-        protected AbstractEncryption encryptionInstance { get { return this._encryptionInstance; } }
+        protected AbstractEncryption encryptionInstance { 
+            get { return this._encryptionInstance; }
+            set
+            {
+                T val = this.getValue(this.getDecryptedBuffer());
+                this._encryptionInstance = value;
+                this.setValue(val);
+            }
+        }
 
-        public virtual T value { get { return this.getValue( this.getDecryptedBuffer() ); } set { this.setValue(value); } }
+        public virtual T value { get { return this.getValue(this.getDecryptedBuffer()); } set { this.setValue(value); } }
 
         protected abstract T getValue(byte[] buffer);
         protected abstract byte[] getBytes(T value);
