@@ -38,10 +38,10 @@ This library contains these default types :
 | EInt16 | PInt16 | signed short | 0x2
 | EInt32 | PInt32 | signed int32 | 0x4
 | EInt64 | PInt64 | signed int64 | 0x8
-| EString | PString | string | ???
 | EUInt16 | PUInt16 | unsigned short | 0x2
 | EUInt32 | PUInt32 | unsigned int32 | 0x4
 | EUInt64 | PUInt64 | unsigned int64 | 0x8
+| EString | PString | string | ???
 | EStruct | PStruct | struct T | ???
 
 
