@@ -32,6 +32,7 @@ This library contains these default types :
 | Encrypted Class | Protected Class | Type | Length
 | ------ | ------ | ------ | ------ |
 | EByte | PByte | unsigned byte | 0x1
+| ESByte | PSByte | signed byte | 0x1
 | EDouble | PDouble | double | 0x8
 | EFloat | PFloat | float | 0x4
 | EInt16 | PInt16 | signed short | 0x2
@@ -41,6 +42,7 @@ This library contains these default types :
 | EUInt16 | PUInt16 | unsigned short | 0x2
 | EUInt32 | PUInt32 | unsigned int32 | 0x4
 | EUInt64 | PUInt64 | unsigned int64 | 0x8
+| EStruct | PStruct | struct T | ???
 
 
 #### Variable Usage
@@ -153,13 +155,13 @@ using FieldProtection.Utils;
 
 IllegalModification Delegates:
 ```sh
-delegate bool illegalModificationCallback<T>(ref T value, ref T rightValue, ref bool patchValue);
+delegate bool illegalModificationCallback<T>(AbstractProtectedField<T> target, ref T value, ref T rightValue, ref bool patchValue);
 delegate bool basicIllegalModificationCallback(ref bool patchValue);
 ```
 
 Create Typed Illegal Modification Callback:
 ```sh
-public bool onQueryModification(ref string value, string rightValue, ref bool patchValue) {
+public bool onQueryModification(AbstractProtectedField<string> target, ref string value, string rightValue, ref bool patchValue) {
     Console.WriteLine("You tried to edit the query ['" + rightValue + "'] to ['" + value + "']");
     Console.WriteLine("The query has been redefined to ['" + rightValue + "']");
 }
