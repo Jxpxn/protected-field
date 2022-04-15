@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-A simple field protection to prevent illegal memory write/read and client-side MySQL injections
+A simple field protection to prevent illegal memory write/read operations, can be used in video games, desktop applications with sensitive data...
 
   - Encrypted field
   - Protected field
