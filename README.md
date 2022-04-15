@@ -384,6 +384,3 @@ Abstract methods:
     -> This method is called at each value get and must return the injected buffer converted in T type;
 
 ----
-
-
-**Free Library ^^**
